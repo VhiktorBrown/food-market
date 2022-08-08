@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food_market/pages/auth/sign_up_in.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../utils/app_colors.dart';
@@ -22,7 +23,7 @@ class _HomePageState extends State<HomePage> {
   List pages = [
     MainHomePage(),
     CartDetails(),
-    ProfilePage()
+    SignUpIn()
   ];
 
   void onTapNav(int index){
