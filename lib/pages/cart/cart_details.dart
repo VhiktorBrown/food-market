@@ -184,7 +184,7 @@ class CartDetails extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              margin: EdgeInsets.only(left: 20, right: 20),
+              margin: const EdgeInsets.only(left: 20, right: 20, top: 10),
               height: 40,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),

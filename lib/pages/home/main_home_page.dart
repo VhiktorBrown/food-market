@@ -273,20 +273,18 @@ class MainHomePage extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Column(
-                                children: [
-                                  Text(
-                                    foods[index].title,
+                              Expanded(
+                                child: Text(
+                                  foods[index].title,
 
-                                    style: GoogleFonts.nunito(
-                                      fontSize: 14,
-                                      color: AppColors.primaryColor,
-                                      fontWeight: FontWeight.w800
-                                    ),
-                                    maxLines: 2,
-                                    overflow: TextOverflow.ellipsis,
+                                  style: GoogleFonts.nunito(
+                                    fontSize: 14,
+                                    color: AppColors.primaryColor,
+                                    fontWeight: FontWeight.w800
                                   ),
-                                ],
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
                               ),
                               SizedBox(width: 20,),
                               Container(

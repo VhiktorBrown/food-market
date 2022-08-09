@@ -21,6 +21,7 @@ class TextFieldWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 45,
       margin: const EdgeInsets.only(left: 20, right: 20),
       decoration: BoxDecoration(
           color: AppColors.darkerGrey,
@@ -42,13 +43,13 @@ class TextFieldWidget extends StatelessWidget {
         textAlignVertical: TextAlignVertical.center,
         style: GoogleFonts.nunito(
           fontSize: 14,
-          color: AppColors.greyColor
+          color: AppColors.lightGrey
         ),
         decoration: InputDecoration(
           //hintText
           hintText: hintText,
           //prefixIcon
-          prefixIcon: Icon(icon, color: AppColors.greyColor,),
+          prefixIcon: Icon(icon, color: AppColors.lightGrey,),
           //focusedBorder
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(radius),
