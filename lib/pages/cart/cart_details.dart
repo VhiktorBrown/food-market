@@ -79,15 +79,18 @@ class CartDetails extends StatelessWidget {
                       children: [
                         //Image that shows Food
                         Container(
-                            height: 80,
+                          height: 100,
+                          width: 120,
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30),
+                                image: const DecorationImage(
+                                  image: AssetImage("assets/images/food2.jpg"),
+                                  fit: BoxFit.cover
+                                ),
+                                  borderRadius: BorderRadius.circular(15),
                                   color: Colors.transparent
+
                               ),
-                              child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(10),
-                                  child: Image.asset("assets/images/food2.jpg",)
-                              )),
+                        ),
                         Expanded(
                             child: Padding(
                               padding: const EdgeInsets.only(left: 10, right: 10),

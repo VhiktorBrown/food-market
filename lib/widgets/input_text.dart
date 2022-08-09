@@ -3,28 +3,29 @@ import 'package:flutter/material.dart';
 import 'package:food_market/utils/app_colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../utils/app_colors.dart';
 import '../utils/dimensions.dart';
 
-class TextFieldWidget extends StatelessWidget {
-  final TextEditingController textController;
-  final String hintText;
-  final IconData icon;
-  final double radius;
+class InputText extends StatelessWidget {
+  TextEditingController textController;
+  String hintText;
+  IconData icon;
   bool isObscure;
 
-  TextFieldWidget({Key? key, required this.textController, required this.hintText,
-    required this.icon,
-    required this.radius,
-    this.isObscure = false}) : super(key: key);
+  InputText({Key? key,
+  required this.textController,
+  required this.hintText,
+  required this.icon,
+  this.isObscure = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(left: 20, right: 20),
+      width: double.infinity,
+      alignment: Alignment.centerLeft,
       decoration: BoxDecoration(
-          color: AppColors.darkerGrey,
-          borderRadius: BorderRadius.circular(radius),
+          color: AppColors.lightBlack,
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: AppColors.lightGrey, width: 0),
           boxShadow: [
             BoxShadow(
               blurRadius: 3,
@@ -37,30 +38,31 @@ class TextFieldWidget extends StatelessWidget {
       child: TextField(
         obscureText: isObscure?true:false,
         controller: textController,
-        textAlign: TextAlign.start,
-        cursorColor: AppColors.secondaryColor,
-        textAlignVertical: TextAlignVertical.center,
+        keyboardType: TextInputType.text,
+        cursorRadius: const Radius.circular(1),
+        cursorColor: AppColors.primaryColor,
         style: GoogleFonts.nunito(
-          fontSize: 14,
-          color: AppColors.greyColor
+          fontSize: 18,
+          color: AppColors.primaryColor,
+          fontWeight: FontWeight.w400
         ),
         decoration: InputDecoration(
           //hintText
           hintText: hintText,
-          //prefixIcon
-          prefixIcon: Icon(icon, color: AppColors.greyColor,),
+          //suffixIcon
+          suffixIcon: Icon(icon, color: AppColors.primaryColor,),
           //focusedBorder
           focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(radius),
+              borderRadius: BorderRadius.circular(10),
               borderSide: BorderSide(
                   width: 1.0,
-                  color: AppColors.secondaryColor
+                  color: AppColors.primaryColor
               )
           ),
 
           //enabled Border
           enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(radius),
+              borderRadius: BorderRadius.circular(10),
               borderSide: const BorderSide(
                 width: 1.0,
                 color: Colors.transparent,
@@ -69,8 +71,12 @@ class TextFieldWidget extends StatelessWidget {
 
           //border - Just border
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(radius),
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(
+              color: AppColors.lightGrey
+            )
           ),
+
         ),
       ),
     );

@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food_market/pages/auth/sign_in.dart';
+import 'package:food_market/pages/auth/sign_up.dart';
 import 'package:food_market/pages/auth/sign_up_in.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../utils/app_colors.dart';
 import '../cart/cart_details.dart';
-import '../profile/profile_page.dart';
 import 'main_home_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -21,9 +22,9 @@ class _HomePageState extends State<HomePage> {
 
 
   List pages = [
-    MainHomePage(),
-    CartDetails(),
-    SignUpIn()
+    const MainHomePage(),
+    const CartDetails(),
+    SignIn()
   ];
 
   void onTapNav(int index){

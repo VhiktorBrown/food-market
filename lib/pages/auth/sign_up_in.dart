@@ -77,10 +77,10 @@ class _SignUpInState extends State<SignUpIn> {
           children: [
             Container(
               height: 50,
-              padding: EdgeInsets.only(left: 30, right: 30),
+              padding: const EdgeInsets.only(left: 30, right: 30),
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(15),
                 color: AppColors.primaryColor
               ),
               child: Text(
@@ -97,9 +97,9 @@ class _SignUpInState extends State<SignUpIn> {
             Container(
               height: 50,
               alignment: Alignment.center,
-              padding: EdgeInsets.only(left: 30, right: 30),
+              padding: const EdgeInsets.only(left: 30, right: 30),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(15),
                   border: Border.all(color: AppColors.secondaryColor, width: 2),
                   color: Colors.transparent
               ),
