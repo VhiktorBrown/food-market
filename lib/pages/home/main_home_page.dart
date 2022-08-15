@@ -238,13 +238,12 @@ class MainHomePage extends StatelessWidget {
           SizedBox(height: 10,),
 
           //Recommended for you List View
-          //Categories ListView
           Container(
             height: 200,
             padding: EdgeInsets.only(left: 20, right: 20),
             width: double.maxFinite,
             child: ListView.builder(
-                itemCount: categories.length,
+                itemCount: foods.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
                   return Container(

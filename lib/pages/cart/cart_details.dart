@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_market/utils/app_colors.dart';
-import 'package:food_market/utils/dimensions.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../data/models/food.dart';
+import '../food/food_details.dart';
 
 class CartDetails extends StatelessWidget {
   const CartDetails({Key? key}) : super(key: key);
@@ -33,12 +34,12 @@ class CartDetails extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.arrow_back_ios,
                           size: 20,
                           color: Colors.white,
                         ),
-                        SizedBox(width: 30,),
+                        const SizedBox(width: 30,),
                         Text(
                           "Your Cart",
                           style: GoogleFonts.nunito(
@@ -70,26 +71,30 @@ class CartDetails extends StatelessWidget {
                   return Container(
                     height: 100,
                     width: double.maxFinite,
-                    margin: const EdgeInsets.only(left: 15, right: 15, bottom: 10),
+                    margin: const EdgeInsets.only(left: 25, right: 15, bottom: 25),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(10),
                         color: Colors.white
                     ),
                     child: Row(
                       children: [
                         //Image that shows Food
-                        Container(
-                          height: 100,
-                          width: 120,
-                              decoration: BoxDecoration(
-                                image: const DecorationImage(
-                                  image: AssetImage("assets/images/food2.jpg"),
-                                  fit: BoxFit.cover
+                        GestureDetector(
+                          onTap: (){
+                            Get.to(const FoodDetails());
+                          },
+                          child: Container(
+                            height: 100,
+                            width: 120,
+                                decoration: BoxDecoration(
+                                  image: const DecorationImage(
+                                    image: AssetImage("assets/images/food2.jpg"),
+                                    fit: BoxFit.cover
+                                  ),
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.transparent
                                 ),
-                                  borderRadius: BorderRadius.circular(15),
-                                  color: Colors.transparent
-
-                              ),
+                          ),
                         ),
                         Expanded(
                             child: Padding(
@@ -105,7 +110,7 @@ class CartDetails extends StatelessWidget {
                                         decoration: TextDecoration.none
                                     ),
                                   ),
-                                  SizedBox(height: 10,),
+                                  const SizedBox(height: 10,),
                                   Text(
                                     "120g",
                                     style: GoogleFonts.nunito(
@@ -115,7 +120,7 @@ class CartDetails extends StatelessWidget {
                                         decoration: TextDecoration.none
                                     ),
                                   ),
-                                  SizedBox(height: 10,),
+                                  const SizedBox(height: 10,),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
@@ -180,7 +185,7 @@ class CartDetails extends StatelessWidget {
 
       bottomNavigationBar: Container(
         color: Colors.transparent,
-        height: 230,
+        height: 250,
         child: Column(
           children: [
             Container(
@@ -205,7 +210,7 @@ class CartDetails extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(5),
+                      padding: const EdgeInsets.all(5),
                       decoration: BoxDecoration(
                           color: AppColors.secondaryColor,
                           borderRadius: BorderRadius.circular(5)
@@ -223,7 +228,7 @@ class CartDetails extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 15,),
+            const SizedBox(height: 15,),
             Padding(
               padding: const EdgeInsets.only(left: 25, right: 25),
               child: Row(
@@ -248,7 +253,12 @@ class CartDetails extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 15,),
+            //Divider under Subtotal
+            const Divider(
+              indent: 25,
+              endIndent: 25
+            ),
+            const SizedBox(height: 10,),
             Padding(
               padding: const EdgeInsets.only(left: 25, right: 25),
               child: Row(
@@ -273,7 +283,12 @@ class CartDetails extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 15,),
+            //Divider under Promo code discount
+            const Divider(
+                indent: 25,
+                endIndent: 25
+            ),
+            const SizedBox(height: 10,),
             Padding(
               padding: const EdgeInsets.only(left: 25, right: 25),
               child: Row(
@@ -298,10 +313,10 @@ class CartDetails extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 10,),
+            const SizedBox(height: 10,),
             Container(
-              margin: EdgeInsets.only(left: 20, right: 20, bottom: 10),
-              padding: EdgeInsets.only(left: 20, right: 20, top: 5, bottom: 5),
+              margin: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
+              padding: const EdgeInsets.only(left: 20, right: 20, top: 5, bottom: 5),
               width: double.maxFinite,
                 height: 40,
                 decoration: BoxDecoration(
@@ -311,7 +326,7 @@ class CartDetails extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.center,
                   child: Text(
-                    "Order",
+                    "Place Order",
                     style: GoogleFonts.nunito(
                       fontSize: 20,
                       fontWeight: FontWeight.w800,

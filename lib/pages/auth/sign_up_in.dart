@@ -73,7 +73,7 @@ class _SignUpInState extends State<SignUpIn> {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.only(left: 10, right: 10, bottom: 40),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               height: 50,
@@ -92,6 +92,8 @@ class _SignUpInState extends State<SignUpIn> {
                 ),
               ),
             ),
+
+            const SizedBox(width: 20),
 
             //Sign in Button
             Container(

@@ -11,7 +11,7 @@ class Food {
 
 List<Food> foods = [
   Food(
-    title: "Spinach Lovefeast",
+    title: "Spinach Love feast of the Love Festival",
     price: 12.99
   ),
   Food(
@@ -23,11 +23,11 @@ List<Food> foods = [
       price: 25.99
   ),
   Food(
-      title: "Spinach Lovefeast",
+      title: "Spinach Love feast",
       price: 10.99
   ),
   Food(
-      title: "Spinach Lovefeast",
+      title: "Spinach Love feast",
       price: 12.99
   ),
   Food(
@@ -39,7 +39,7 @@ List<Food> foods = [
       price: 25.99
   ),
   Food(
-      title: "Spinach Lovefeast",
+      title: "Spinach Love feast",
       price: 10.99
   )
 

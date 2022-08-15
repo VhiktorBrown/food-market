@@ -1,8 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:food_market/pages/auth/sign_in.dart';
-import 'package:food_market/pages/auth/sign_up.dart';
-import 'package:food_market/pages/auth/sign_up_in.dart';
+import 'package:food_market/pages/profile/profile_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../utils/app_colors.dart';
@@ -24,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   List pages = [
     const MainHomePage(),
     const CartDetails(),
-    SignIn()
+    const ProfilePage()
   ];
 
   void onTapNav(int index){
@@ -38,6 +35,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: pages[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: AppColors.backgroundColor,
         selectedItemColor: AppColors.secondaryColor,
         unselectedItemColor: AppColors.primaryColor,
         selectedLabelStyle: GoogleFonts.nunito(
